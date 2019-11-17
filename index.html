@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="img/favicon.png" type="image/png">
+        <title>Cattle DMS</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="vendors/linericon/style.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+        <link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css">
+        <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
+        <link rel="stylesheet" href="vendors/animate-css/animate.css">
+        <!-- main css -->
+        <link rel="stylesheet" href="css/style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<style>
+				#controls{
+					background: #222222
+				}
+				#caca{
+					color: aliceblue;
+				}
+				#map {
+				position: static;
+                height: 450px;
+                width: 100%;
+				}
+				#block_container
+				{
+					text-align:center;
+				}
+				#bloc1, #bloc2, #bloc3
+				{
+					display:inline-block;
+				}
+				tbody {
+					display: table-row-group;
+					vertical-align: middle;
+					border-color: inherit;
+				}
+		</style>
+    </head>
+    <body>
+        
+        <!--================Header Menu Area =================-->
+        <header class="header_area">
+            <div class="main_menu">
+            	<nav class="navbar navbar-expand-lg navbar-light">
+					<div class="container">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<a class="navbar-brand logo_h" style="padding: 40px;" href="index.html"><img src="img/logo.png" alt=""></a>
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+							<ul class="nav navbar-nav menu_nav ml-auto">
+								<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li> 
+								<li class="nav-item"><a class="nav-link" href="#servico">Sobre Nós</a></li>
+								<li class="nav-item"><a class="nav-link" href="#maps">Interface de Controle</a></li>  
+							</ul>
+						</div> 
+					</div>
+            	</nav>
+            </div>
+        </header>
+        <!--================Home Banner Area =================-->
+        <section class="home_banner_area">
+            <div class="banner_inner d-flex align-items-center">
+            	<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+				<div class="container">
+					<div class="banner_content text-center">
+						<h3>Controle o seu <span>Gado</span></h3>
+						<p>Controle o seu rebanho de maneira fácil,simples e barata.</p>
+					</div>
+				</div>
+            </div>
+        </section>
+        <!--================End Home Banner Area =================-->
+        <section class="services_area p_120" id = "servico">
+        	<div class="container">
+        		<div class="main_title">
+        			<h2>Nossos diferenciais</h2>
+        			<p>Entenda oque faz o Cattle Dedicated Monitoring System tão especial.</p>
+        		</div>
+        		<div class="row services_inner">
+        			<div class="col-lg-4">
+        				<div class="services_item">
+        					<img src="img/icon/service-icon-1.png">
+        					<a><h4>Google Maps e Firebase</h4></a>
+        					<p> Usando tecnologias da Google, como Firebase e Maps, entregamos uma sistema intuitivo e eficinte.</p>
+        				</div>
+        			</div>
+        			<div class="col-lg-4">
+        				<div class="services_item">
+        					<img src="img/icon/service-icon-2.png" alt="">
+        					<a><h4>Rádio de Longo Alcançe</h4></a>
+        					<p> Usando tecnologia de Long Range consseguimos criar o sistema mais barato do mercado e ao mesmo tempo preciso e eficiente.</p>
+        				</div>
+        			</div>
+        			<div class="col-lg-4">
+        				<div class="services_item">
+        					<img src="img/icon/service-icon-3.png" alt="">
+        					<a href="#"><h4>Processamento Rápido com Baixo Custo</h4></a>
+        					<p> Usando a EVAL ADICUP-3029, podemos entregar um alto poder de processamento com baixo custo energético.</p>
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+		</section>
+		<!--================Builder Image Area =================-->
+        <seciton class="builder_area" id = "maps">
+        	<div class="main_title">
+        		<h2>Interface de Controle</h2>
+			</div>
+			<div id = "controls" style="padding-top: 40px; padding-bottom: 10px;">
+					<button id="bt04" class="genric-btn primary-border circle" style="margin: 0 auto; display: block;">Cerca</button>
+					<br>
+					<div id = 'aux' style="margin: 0 auto; display: block;">
+						<h5>Log de Comunicação</h5>
+					</div>
+			</div>
+			
+			<div id ="map"></div>
+			<div id ="controls">
+				<div class="single-footer-widget" style="padding: 50px;">
+					<div>
+						<form target="_blank"">
+							<div class="input-group d-flex flex-row" id="block_container">
+								<div id = "bloc1" style="margin-left: 2.0cm;">
+								<h3 id = "caca"> ID PARA LOCALIZAR VACA </h3>
+								<input  id="in02" placeholder="ID para localização" >
+								<button id="bt02" type="button" class="btn sub-btn"><span class="lnr lnr-arrow-right"></span></button>
+								</div>
+								<div id = "bloc2" style="margin-left: 2.0cm;">
+								<h3 id = "caca"> ID PARA DESBLOQUEAR VACA </h3>
+								<input id="in01"  placeholder="ID para desbloqueio" >
+								<button id="bt01" class="btn sub-btn" type="button"><span class="lnr lnr-arrow-right"></span></button>
+								</div>
+								<div id = "bloc3" style="margin-left: 2.0cm;">
+								<h3 id = "caca"> ID PARA BLOQUEAR VACA </h3>
+								<input id="in03" placeholder="ID para bloqueio"  >
+								<button id="bt03" type="button" class="btn sub-btn"><span class="lnr lnr-arrow-right"></span></button>	
+								</div>
+							</div>									
+						</form>
+					</div>
+				</div>
+			</div>		
+        </seciton>
+		<script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-database.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAT6ewf-Oya8aYaupm7YRACH4BuiDptZ-4"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="js/firebase.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/maps.js"></script>
+		<script>
+			window.onload = function(){
+				mapsControl.createMap();
+				mapsControl.checkForCollars();
+				mapsControl.checkForFixPoints();
+				cowDatabase.requestReply();
+			}
+		</script>
+    </body>
+</html>
