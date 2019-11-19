@@ -1,6 +1,6 @@
 const mapsControl = {};
-const myLng = -34.95193;
-const myLat = -8.05517;
+const myLng = -35.399706;
+const myLat = -5.796582;
 var map;
 var markers = [];
 var markersCount = 0;
@@ -9,6 +9,7 @@ var fenceEdge;
 
 (function(){
   function createMap(){
+    console.log(myLat,myLng);
     map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: myLat, lng: myLng},
       zoom: 15,
