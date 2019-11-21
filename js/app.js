@@ -160,8 +160,9 @@ var tableElement = document.getElementById("table");
             snapshot.forEach(function(childSnapshot){
                 var data = childSnapshot.val();
                 if(data.status == 'theft'){
+                    console.log('DEBUG');
                     divElement.innerHTML = '<div id = "violation" style="float: right;">'+
-                    '<h5 style = "color:red;">'+`Collar da vaca ${data.id} partido.` +'</h5>' +
+                    '<h5 style = "color:red;">'+`Coleira da Vaca ${data.id} partido.` +'</h5>' +
                     '</div>';
 
                     alert(`Coleira da Vaca ${data.id} violada`);
@@ -214,6 +215,7 @@ var tableElement = document.getElementById("table");
     }
     
     cowDatabase.setTimeRefreshInterval = setTimeRefreshInterval;
+    cowDatabase.checkForViolation = checkForViolation;
     cowDatabase.requestReply = requestReply;
     cowDatabase.rmvFixPoint = rmvFixPoint;
     cowDatabase.newFixPoint = newFixPoint;
