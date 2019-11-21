@@ -90,6 +90,10 @@ var tableElement = document.getElementById("table");
         if(id == 2){
           mapsControl.setMarker(x,y,2,1);
         }
+        if(id == 3){
+            // 50,-200
+            mapsControl.setMarker(x,y,10,1);
+        }
         
         let changes = {};
         changes['/FixPoint/' + fixPoint.id] = fixPoint;
@@ -138,7 +142,6 @@ var tableElement = document.getElementById("table");
             var data = childSnapshot.val();
             var id = data.id;
             if(data.status == "ok1"){
-                console.log('dasdasdadsdadsdadadsdasdasdasdsadsadasdasdadasdasdasdandaoknafaknfoaknfaofnkoanfoano');
                 var collarIdRef = firebase.database().ref('/Collars/' + data.id);
                 collarIdRef.child('open').set(true);
                 rmvRequest(data.id);
@@ -152,7 +155,35 @@ var tableElement = document.getElementById("table");
     }
     function checkForViolation(){
         var violationRef = firebase.database().ref('/Violation/');
-        
+        var divElement = document.getElementById('violation');
+        violationRef.on('value', function(snapshot){
+            snapshot.forEach(function(childSnapshot){
+                var data = childSnapshot.val();
+                if(data.status == 'theft'){
+                    divElement.innerHTML = '<div id = "violation" style="float: right;">'+
+                    '<h5 style = "color:red;">'+`Collar da vaca ${data.id} partido.` +'</h5>' +
+                    '</div>';
+
+                    alert(`Coleira da Vaca ${data.id} violada`);
+                }
+            });
+        });
+    }
+    function setTimeRefreshInterval(value){
+        const request = {
+            interval : value,
+            status : 'interval',   
+        }
+        let collarRef = firebase.database().ref();
+        let requests = {};
+        requests['/Request/' + 0] = request;
+        collarRef.update(requests)
+            .then(function(){
+                return {success : true, msg : 'Interval Set'};
+            })
+            .catch(function(error){
+                return {success : false, msg : `${error.message}`};
+            })
     }
     button01Element.onclick = function unlockCow(){
         console.log('botao de liberação clicado');
@@ -182,6 +213,7 @@ var tableElement = document.getElementById("table");
         }
     }
     
+    cowDatabase.setTimeRefreshInterval = setTimeRefreshInterval;
     cowDatabase.requestReply = requestReply;
     cowDatabase.rmvFixPoint = rmvFixPoint;
     cowDatabase.newFixPoint = newFixPoint;
