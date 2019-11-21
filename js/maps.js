@@ -95,6 +95,10 @@ var fenceEdge;
       ]
     })
   }
+  function setLatLng(x,y){
+    myLng = x;
+    myLat = y;
+  }
   function setMarker(x,y,index,kind,status){
     if(kind == 1 || kind == 3){
       var new_longitude = myLng + (x / 6371000) * (180 / 3.1415926) / Math.cos(myLng * 3.1415926/180);
@@ -333,5 +337,6 @@ var fenceEdge;
   mapsControl.setMarker = setMarker;
   mapsControl.createMap = createMap;
   mapsControl.moveMarker = moveMarker;
+  mapsControl.setLatLng = setLatLng;
 })()
     
